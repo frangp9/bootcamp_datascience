@@ -63,11 +63,32 @@ while(True):
     if opcion == 3:
         print("=" * ANCHO)
         print(" " * 10 + "ACTUALIZAR ALUMNO")
-        print("=" * ANCHO)
+        print("=" * ANCHO)   
+        
+        codigo = input("INGRESE DNI DEL ALUMNO A ACCTUALIZAR : ")
+        if codigo in dic_alumnos:
+            nombre = input("INGRESE NUEVO NOMNRE : ")
+            email = input("INGRESE NUEVO EMAIL : ")
+            
+            dic_alumnos[codigo]['nombre'] = nombre
+            dic_alumnos[codigo]['email'] = email
+            
+            print("Alumno actualizado correctamente")
+        else:
+            print("El alumno no existe")
+                    
     if opcion == 4:
         print("=" * ANCHO)
         print(" " * 10 + "ELIMINAR ALUMNO")
         print("=" * ANCHO)
+        
+        codigo = input("INGRESE DNI DEL ALUMNO A ELIMINAR : ")
+        if codigo in dic_alumnos:
+            del dic_alumnos[codigo]
+            print(f"Alumno {codigo} eliminado...")
+        else:
+            print("El alumno no existe")
+        
     if opcion == 5:
         print("=" * ANCHO)
         print(" " * 10 + "SALIENDO DEL SISTEMA...")
